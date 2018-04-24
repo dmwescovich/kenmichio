@@ -1,62 +1,35 @@
----
-layout: default
----
-
-<main>
-
-  <section>
-      <h1>{{ site.title }}</h1>
-      <h3>{{ site.description }}</h3>
-  </section>
-
-  <div>
-    {% for post in paginator.posts %}
-      <article itemscope itemtype="http://schema.org/BlogPosting" role="article">
-
-          <header>
-            <h2 itemprop="name"><a href="{{ site.baseurl }}{{ post.url }}" itemprop="url">{{ post.title }}</a></h2>
-          </header>
-
-          <div class="post-meta">
-            <time datetime="{{ post.date | date_to_long_string }}">{{ post.date | date_to_long_string }}</time>
-          </div>
-
-          <section itemprop="description">
-            {{ post.content | markdownify }}
-          </section>
-
-      </article>
-    {% endfor %}
-  </div>
-
-  <nav role="navigation">
-    {% if paginator.total_pages > 1 %}
-    <div class="pagination">
-      {% if paginator.previous_page %}
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
-      {% else %}
-        <span>&laquo;</span>
-      {% endif %}
-
-      {% for page in (1..paginator.total_pages) %}
-        {% if page == paginator.page %}
-          <em>{{ page }}</em>
-        {% elsif page == 1 %}
-          <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
-        {% else %}
-          <a href="{{ site.paginate_path | prepend: site.baseurl | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
-        {% endif %}
-      {% endfor %}
-
-      {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
-      {% else %}
-        <span>&raquo;</span>
-      {% endif %}
-    </div>
-    {% endif %}
-  </nav>
-
-</main>
-
-{% include footer.html %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Kenmichio Goes Female</title>
+    <link rel="stylesheet" href="tufte.css"/>
+</style>
+  </head>
+  <body>
+    <section>
+      <div class=page-links>
+        <a class=page-link href=# target=_top>Home</a>
+        <a class=page-link href="manuscript.html" target=_top>The Manuscript</a>
+        <a class=page-link href=# target=_top>The Text</a>
+        <a class=page-link href=# target=_top>Analytical Essays</a>
+      </div>
+    </section>
+    <article>
+      <h1>Kenmichio Goes Female</h1>
+      <p class="subtitle">Subtite Goes Here</p>
+      <section>
+        <h2>Introduction</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </section>
+      <section>
+        <h2>Editorial Rationale</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </section>
+      <section>
+        <h2>Bibliography</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </section>
+    </article>
+  </body>
+</html>
